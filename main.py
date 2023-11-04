@@ -1,97 +1,18 @@
-MENU = {
-    "espresso": {
-        "ingredients": {
-            "water": 50,
-            "coffee": 18,
-        },
-        "cost": 1.5,
-    },
-    "latte": {
-        "ingredients": {
-            "water": 200,
-            "milk": 150,
-            "coffee": 24,
-        },
-        "cost": 2.5,
-    },
-    "cappuccino": {
-        "ingredients": {
-            "water": 250,
-            "milk": 100,
-            "coffee": 24,
-        },
-        "cost": 3.0,
-    }
-}
+import data
 
-resources = {
-    "water": 300,
-    "milk": 200,
-    "coffee": 100,
-}
+StillInGame = True
 
-menu = {
-    "espresso": {
-        "ingredients": {
-            "water": 50,
-            "coffee": 18,
-        },
-        "cost": 1.5,
-    },
-    "latte": {
-        "ingredients": {
-            "water": 200,
-            "milk": 150,
-            "coffee": 24,
-        },
-        "cost": 2.5,
-    },
-    "cappuccino": {
-        "ingredients": {
-            "water": 250,
-            "milk": 100,
-            "coffee": 24,
-        },
-        "cost": 3.0,
-    }
-}
 
-resources = {
-    "water": 300,
-    "milk": 200,
-    "coffee": 100,
-}
-MENU = {
-    "espresso": {
-        "ingredients": {
-            "water": 50,
-            "coffee": 18,
-        },
-        "cost": 1.5,
-    },
-    "latte": {
-        "ingredients": {
-            "water": 200,
-            "milk": 150,
-            "coffee": 24,
-        },
-        "cost": 2.5,
-    },
-    "cappuccino": {
-        "ingredients": {
-            "water": 250,
-            "milk": 100,
-            "coffee": 24,
-        },
-        "cost": 3.0,
-    }
-}
-
-resources = {
-    "water": 300,
-    "milk": 200,
-    "coffee": 100,
-}
-
-// TODO abc
-
+while StillInGame == True:
+    order = input("What would you like? (espresso/latte/cappuccino):").lower()
+    if order in data.menu:
+        print(f"you have ordered a {data.menu[order]}")
+    elif order == "off":
+        print("The machine is turning off... ")
+        StillInGame = False
+        break;
+    elif order == "report":
+        print("Printing machine report: \n")
+#        showResources()             #shows all resources.
+    else: 
+        print("Enter a proper input.")
