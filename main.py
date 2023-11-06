@@ -9,9 +9,9 @@ def startGame(stillInGame):
             print(f"\nYou have ordered a {order}")
             print(f"\nThe drink costs {data.menu[order]['cost']}$\n")
             enoughResources = True
-            enoughResources = checkResources(order) 
+            enoughResources = checkResources(order) #checks if theres enough resources and returns true or false - also prints resources insufficient message if necessary
             if enoughResources:
-                insertCoins(order)
+                insertCoins(order)       # input coins and provide change accordingly - print insufficient if not enough coins
                 print(f"\nHere is your {order}, Enjoy!")
             else:
                 stillInGame = False
@@ -22,7 +22,7 @@ def startGame(stillInGame):
         
         elif order == "report":
             print("\nPrinting machine report:\n \n")
-            showResources()             #shows all resources.
+            showResources()                             #shows all resources.
 
         else: 
             print("\nEnter a proper input.")
