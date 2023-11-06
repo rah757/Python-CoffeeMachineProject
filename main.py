@@ -19,7 +19,6 @@ def startGame(stillInGame):
         elif order == "off":
             print("\nThe machine is turning off...  ")
             stillInGame = False
-            break;
         
         elif order == "report":
             print("\nPrinting machine report:\n \n")
@@ -40,20 +39,15 @@ def ingredientFinder(order,item):
     return data.menu[order]['ingredients'][item], data.resources[item]
 
 def checkResources(order):
-    water, resourceWater = ingredientFinder(order, 'water')
-    milk, resourceMilk = ingredientFinder(order, 'milk')
-    coffee, resourceCoffee = ingredientFinder(order, 'coffee')
-    requirements = [water, milk, coffee]
-    resources = [resourceWater, resourceMilk, resourceCoffee]
     enough = True
 
-    for i in range(0,len(resources)):
-        if requirements[i] <= resources[i]:
+    for item in data.menu[order]['ingredients']:
+        if data.menu[order]['ingredients'][item] <= data.resources[item]:
             enough = True
         else:
             enough = False
             break;
-    
+
     if enough == False:
         print("Not enough resources in coffee machine, please visit some other time.")
         return False
