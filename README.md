@@ -2,15 +2,12 @@
 
 ## Description
 
-This project was created by myself during the 15th day of the [100 Days of Code](https://www.udemy.com/course/100-days-of-code/) challenge. The Coffee Machine Program is designed to simulate the operation of a coffee machine. It can take user orders for espresso, latte, and cappuccino, process payments, and manage resources like water, milk, coffee, and money.
+This project was created during the 15th day of the [100 Days of Code](https://www.udemy.com/course/100-days-of-code/) challenge. The Coffee Machine Program is designed to simulate the operation of a coffee machine. It can take user orders for espresso, latte, and cappuccino, process payments, and manage resources like water, milk, coffee, and money.
 
 This is made in such a way that you can easily modify the types of drinks within the data.py folder and add new drinks as per your wish.
 
 ## Screenshots
-![image](https://github.com/rah757/Python-CoffeeMachineProject/assets/69799424/bf6161bc-55aa-425a-9d55-84b95cb581e1)
-![image](https://github.com/rah757/Python-CoffeeMachineProject/assets/69799424/33dda25f-cfc6-4132-a43a-8c5e70e3b32e)
-
-
+![image](https://github.com/rah757/Python-CoffeeMachineProject/assets/69799424/aa857c3f-6fed-466c-85a8-2e1801fe00e0)
 
 ## Usage
 
