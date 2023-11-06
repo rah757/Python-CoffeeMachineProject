@@ -5,12 +5,14 @@ def startGame(stillInGame):
         order = input("\nWhat would you like? (espresso/latte/cappuccino):").lower()
         if order in data.menu:
             print(f"\nYou have ordered a {order}")
-            print(f"\nThe drink costs {data.menu[order]['cost']}$")
-            print("\nPlease insert your coins: ")
-            checkResources(order)        # testing
-            insertCoins(order)
-            makeCoffee(order)
-            print(f"\nHere is your {order}, Enjoy!")
+            print(f"\nThe drink costs {data.menu[order]['cost']}$\n")
+            enoughResources = True
+            enoughResources = checkResources(order) 
+            if enoughResources:
+                insertCoins(order)
+                print(f"\nHere is your {order}, Enjoy!")
+            else:
+                stillInGame = False
 
         elif order == "off":
             print("\nThe machine is turning off...  ")
@@ -24,11 +26,12 @@ def startGame(stillInGame):
         else: 
             print("\nEnter a proper input.")
 
-        if input("\nwould you like to order another coffee? (y/n): ") == 'n':
-            stillInGame = False
-            print("\nHope you enjoyed your order, please visit again soon! \n")
-        else:
-            stillInGame = True
+        if stillInGame:
+            if input("\nwould you like to order another coffee? (y/n): ") == 'n':
+                stillInGame = False
+                print("\nHope you enjoyed your order, please visit again soon! \n")
+            else:
+                stillInGame = True
 
 
 def ingredientFinder(order,item):
@@ -51,8 +54,9 @@ def checkResources(order):
     
     if enough == False:
         print("Not enough resources in coffee machine, please visit some other time.")
-        stillInGame = False
-        return
+        return False
+    else:
+        return True
 
 
 def insertCoins(order):              #insert coins and calc total - check if tx was successful - if extra money, provide change
@@ -72,9 +76,9 @@ def insertCoins(order):              #insert coins and calc total - check if tx 
         print("not enough money")
         return
 
-def makeCoffee(order):              # reduce the coffee resources from total resources
+def makeCoffee(order):             # reduce the coffee resources from total resources
     for element in data.resources:
-        data.resources[element] -= data.menu[order]['cost']
+        data.resources[element] -= data.menu[order]['ingredients'][element]
 
 def showResources():
     print("----- Resources left in stock -----")
