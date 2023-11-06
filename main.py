@@ -1,5 +1,7 @@
 import data
 
+print(data.logo)
+
 def startGame(stillInGame):
     while stillInGame == True:
         order = input("\nWhat would you like? (espresso/latte/cappuccino):").lower()
@@ -61,14 +63,14 @@ def checkResources(order):
 
 def insertCoins(order):              #insert coins and calc total - check if tx was successful - if extra money, provide change
     values = {
-        'quarter':0.25,
-        'dime':0.1,
-        'nickel':0.05,
-        'penny':0.01,
+        'quarters':0.25,
+        'dimes':0.1,
+        'nickels':0.05,
+        'pennies':0.01,
     }
     total = 0
     for element in values:
-        total += int(input(f"Enter the number of {element}: ")) * values[element]
+        total += int(input(f"Insert {element}: ")) * values[element]
     if total >= data.menu[order]['cost']:
         print(f"\nYour change is {total - data.menu[order]['cost']}$")
         makeCoffee(order)
