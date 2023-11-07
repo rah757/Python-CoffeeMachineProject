@@ -34,10 +34,6 @@ def startGame(stillInGame):
             else:
                 stillInGame = True
 
-
-def ingredientFinder(order,item):
-    return data.menu[order]['ingredients'][item], data.resources[item]
-
 def checkResources(order):
     enough = True
 
